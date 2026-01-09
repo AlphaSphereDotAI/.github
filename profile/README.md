@@ -2,7 +2,7 @@
 
 ## Overview
 
-We are a team actively researching artificial intelligence and constantly looking for new ways to learn about it. We are committed to consistently developing our experience in this field and enhancing our skill set, all while embracing our love of learning and employing artificial intelligence to advance our career prospects.
+We are a passionate team pioneering AI research and delivering cutting-edge AI and data solutions. Driven by an insatiable love of learning, we continuously expand our expertise to innovate and propel our careers forward.
 
 ## Services
 
