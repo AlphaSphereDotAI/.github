@@ -6,14 +6,6 @@ pull_request_rules:
       - head = mergify/MH0386/config-update
     actions:
       merge:
-  - name: Merge pull request when Trunk Updated
-    conditions:
-      - author = github-actions[bot]
-      - title = Upgrade trunk
-      - head = trunk-io/update-trunk
-      - files = .trunk/trunk.yaml
-    actions:
-      merge:
   - name: Delete branch after close
     conditions:
       - closed
