@@ -12,7 +12,9 @@ pull_request_rules:
     conditions:
       - files ~= Dockerfile
       - author = renovate[bot]
-      - check-success = Test Image / API Test
+      - and:
+          - check-success = Test Image / API Test
+          - 'check-success = DeepSource: Docker'
     actions:
       queue:
   - name: Automatically label Dockerfile Updates
@@ -118,7 +120,6 @@ queue_rules:
     queue_conditions:
       - and:
           - 'check-success = DeepSource: Secrets'
-          - 'check-success = DeepSource: Docker'
           - check-success = CodeFactor
           - check-success = GitGuardian Security Checks
           - check-success = SonarCloud
