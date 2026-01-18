@@ -39,6 +39,8 @@ pull_request_rules:
       - and:
           - check-success = Check Dependency Compatibility
           - check-success = Test Image / API Test
+          - 'check-success = DeepSource: Python'
+          - 'check-success = DeepSource: pyproject.toml'
     actions:
       queue:
   - name: Automatically label Python Dependency Updates
@@ -116,8 +118,6 @@ queue_rules:
     queue_conditions:
       - and:
           - 'check-success = DeepSource: Secrets'
-          - 'check-success = DeepSource: Python'
-          - 'check-success = DeepSource: pyproject.toml'
           - 'check-success = DeepSource: Docker'
           - check-success = CodeFactor
           - check-success = GitGuardian Security Checks
