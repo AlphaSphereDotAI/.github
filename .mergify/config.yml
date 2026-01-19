@@ -27,7 +27,9 @@ pull_request_rules:
           - docker
   - name: Automatically queue Github Actions Updates
     conditions:
-      - files ~= ^.github/workflows
+      - or:
+        - files ~= ^.github/workflows
+        - files ~= action.yaml
       - author = renovate[bot]
     actions:
       queue:
