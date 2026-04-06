@@ -158,8 +158,17 @@ queue_rules:
     queue_conditions:
       - files ~= ^(docker-compose-dev.yaml|docker-compose.yaml)$
       - author = renovate[bot]
-merge_queue:
-  mode: parallel
+  - name: AUR Updates
+    allow_queue_branch_edit: true
+    autoqueue: true
+    queue_conditions:
+      - author = renovate[bot]
+      - files ~= PKGBUILD$
+      - deployment-success = pre-commit
+    merge_conditions:
+      - deployment-success = AUR
+merge_protections_settings:
+  post_comment: true
 scopes:
   source:
     files:
