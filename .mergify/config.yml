@@ -147,7 +147,9 @@ queue_rules:
     allow_queue_branch_edit: true
     autoqueue: true
     queue_conditions:
-      - files ~= ^.github/workflows
+      - or:
+        - files ~= ^.github/workflows
+        - files ~= action.yaml$
       - author = renovate[bot]
   - name: Python Dependency Updates
     allow_queue_branch_edit: true
